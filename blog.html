@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Posting</title>
+  <style>/* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+    
+    .header {
+      text-align: center;
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+    }
+    
+    .blog-form, .blog-section {
+      padding: 20px;
+      margin: 20px;
+    }
+    
+    .blog-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-form input, .blog-form textarea, .blog-form button {
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .blog-form textarea {
+      resize: vertical;
+      height: 150px;
+    }
+    
+    .blog-section h2 {
+      text-align: center;
+    }
+    
+    .blog-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+    
+    .blog-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: transform 0.3s;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .blog-card h3 {
+      font-size: 1.5em;
+      color: #333;
+    }
+    
+    .blog-card p {
+      font-size: 1em;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-list {
+        justify-content: center;
+      }
+    
+      .blog-card {
+        width: 90%;
+      }
+    }
+    </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Create a New Blog</h1>
+  </header>
+
+  <!-- Blog Form -->
+  <div class="blog-form">
+    <h2>Post Your Blog</h2>
+    <form id="blogForm">
+      <input type="text" id="title" placeholder="Blog Title" required>
+      <textarea id="content" placeholder="Write your blog..." required></textarea>
+      <button type="submit">Post Blog</button>
+    </form>
+  </div>
+
+  <!-- Display Posted Blogs -->
+  <div class="blog-section">
+    <h2>Latest Blogs</h2>
+    <div id="blogList" class="blog-list">
+      <!-- Blogs will be dynamically inserted here -->
+    </div>
+  </div>
+
+  
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
